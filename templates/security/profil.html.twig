@@ -1,0 +1,15 @@
+{% extends 'base.html.twig' %} {% block title %}Profil - Reviews Empire {%
+endblock %} {% block body %}
+<div class="container mt-3">
+  <h1>Profil Page</h1>
+
+  <ul class="text-center my-5">
+    <li>{{ app.user.email }}</li>
+    <li>{{ app.user.fullname }}</li>
+    <li class="mt-3">
+      <button class="btn btn-danger"><a href="{{ path("app_logout") }}">Logout</a></button>
+    </li>
+  </ul>
+</div>
+
+{% endblock %}

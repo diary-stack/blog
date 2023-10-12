@@ -1,0 +1,21 @@
+.custom-footer li {
+    margin-bottom: 20px;
+    text-align: end;
+}
+
+.custom-footer hr {
+    border: 2px solid white;
+}
+
+.new-footer {
+    color: white;
+}
+
+.new-footer a {
+    text-decoration: underline;
+}
+
+.new-footer i {
+    font-size: 25px;
+    margin-left: 10px;
+}

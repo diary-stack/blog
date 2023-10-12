@@ -1,0 +1,30 @@
+.navigation a {
+    color: inherit;
+    text-decoration: none;
+}
+
+.navigation a.btn {
+    color: white;
+}
+
+.navigation ul {
+    list-style-type: none;
+}
+
+.navigation ul li {
+    display: inline-block;
+    margin: 0 10px;
+}
+
+.navbar-bars,
+.navbar-bars-close {
+    background-color: #14878c;
+    top: -250px;
+    transition: 1s;
+}
+
+.navbar-bars-active {
+    background-color: #14878c;
+    transition: 1s;
+    top: 0;
+}

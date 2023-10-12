@@ -1,0 +1,124 @@
+{% extends 'base.html.twig' %}
+{% block title %}Home - Reviews Empire
+{%
+endblock %}
+
+{% block body %}
+	<header class="text-center mt-5">
+		<div class="custom-badge m-auto mb-2">Explore our Articles</div>
+		<h1>Your Guide to Heathies Living:</h1>
+		<h1>Expert Reviews, Insights, and Inspiration:</h1>
+		<p>
+			Lorem, ipsum dolor sit amet consectetur adipisicing elit. Ipsum ea dicta
+																																																																																																												vero
+		</p>
+		<form action="{{ path("app_article_search") }}" method="get">
+			<div class="d-flex justify-content-center">
+				<button>
+					<i class="fas fa-search"></i>
+				</button>
+				<input type="search" name="q" placeholder="Search for something"/>
+				<div class="target-category">
+					<span class="selected-text">All
+					</span>
+					<i class="fas fa-angle-down ms-1"></i>
+				</div>
+				<input type="hidden" name="category" id="selected-category" value="All"/>
+			</div>
+			<div class="category-list d-none">
+				<ul>
+					<li class="categories">All</li>
+					{% for category in categories %}
+						<li class="categories">{{ category.name }}</li>
+					{% endfor %}
+				</ul>
+			</div>
+		</form>
+	</header>
+	<section class="container">
+		<div class="row">
+			<div class="col-lg-12 mt-5">
+				<h2>Recently Posted</h2>
+			</div>
+			<div class="col-lg-6">
+				<a href="{{ path("app_article_slug", {slug : first[0].slug} ) }}" class="box">
+					<div class="bg-image mb-2" style="background-image: url({{asset('/articles/' ~ first[0].image)}})"></div>
+					<div class="d-flex qw align-items-center">
+						<div class="custom-badge me-2">
+							{{ first[0].category.name }}
+						</div>
+						<i class="fas fa-circle me-1">
+							{{ first[0].readTime }}
+							min read
+						</i>
+					</div>
+					<h2>{{ first[0].title }}</h2>
+					<p>{{ first[0].content | slice(0, 100) }}</p>
+				</a>
+			</div>
+			<div class="col-lg-6">
+				<div class="col-lg-12">
+					<a href="{{ path("app_article_slug", {slug : first[1].slug} ) }}" class="box d-flex">
+						<div class="w-50 params-bg mb-2 me-2" style="background-image: url({{asset('/articles/' ~ first[1].image)}})"></div>
+						<div class="w-50">
+							<div class="d-flex qw align-items-center">
+								<div class="custom-badge me-2">
+									{{ first[1].category.name }}
+								</div>
+								<i class="fas fa-circle me-1">
+									{{ first[1].readTime }}
+									min read
+								</i>
+							</div>
+							<h3>{{ first[1].title }}</h3>
+							<p>{{ first[1].content | slice(0, 50) }}</p>
+						</div>
+					</a>
+				</div>
+				<div class="col-lg-12">
+					<a href="{{ path("app_article_slug", {slug : first[2].slug} ) }}" class="box d-flex">
+						<div class="w-50 params-bg mb-2 me-2" style="background-image: url({{asset('/articles/' ~ first[2].image)}})"></div>
+						<div class="w-50">
+							<div class="d-flex qw align-items-center">
+								<div class="custom-badge me-2">
+									{{ first[2].category.name }}
+								</div>
+								<i class="fas fa-circle me-1">
+									{{ first[2].readTime }}
+									min read
+								</i>
+							</div>
+							<h3>{{ first[2].title }}</h3>
+							<p>{{ first[2].content | slice(0, 50) }}</p>
+						</div>
+					</a>
+				</div>
+			</div>
+		</div>
+	</section>
+	<section class="container">
+		<div class="row">
+			<div class="col-lg-12 mt-5">
+				<h2>Featured Reviews</h2>
+			</div>
+			{% for article in second %}
+				<div class="col-lg-3 mt-3">
+					<a href="{{ path("app_article_slug", {slug : article.slug} ) }}" class="box">
+						<div class="bg-image mb-2" style="background-image: url({{asset('/articles/' ~ article.image)}})"></div>
+						<div class="d-flex qw align-items-center">
+							<div class="custom-badge me-2">
+								{{ article.category.name }}
+							</div>
+							<i class="fas fa-circle me-1">
+								{{ article.readTime }}
+								min read
+							</i>
+						</div>
+						<h3>{{ article.title }}</h3>
+						<p>{{ article.content | slice(0, 50) }}</p>
+					</a>
+				</div>
+			{% endfor %}
+		</div>
+	</section>
+{% endblock %}

@@ -1,0 +1,34 @@
+{% extends 'base.html.twig' %}
+{% block title %}Login - Reviews Empire
+{%
+endblock %}
+{% block body %}
+	{% if error %}
+		Invalid Credentials
+	{% endif %}
+
+	<div class="container">
+		<div class="row">
+			<div class="col-lg-4 offset-lg-4">
+				<h1>Login Page</h1>
+				<form action="{{ path('app_login') }}" method="POST">
+					<div class="mb-3">
+						<label for="email">Email Adress</label>
+						<input type="email" name="_username" id="email" class="form-control" value="{{ lastusername }}"/>
+					</div>
+					<div class="mb-3">
+						<label for="password">Password</label>
+						<input type="password" class="form-control" name="_password" id="password"/>
+					</div>
+					<input type="hidden" name="_target_path" value="{{ path('app_profil') }}"/>
+					<input type="hidden" name="_csrf_token" value="{{ csrf_token('authenticate') }}"/>
+
+					<div>
+						<button class="custom-btn border-0" type="submit">Login</button>
+					</div>
+				</form>
+			</div>
+		</div>
+	</div>
+
+{% endblock %}

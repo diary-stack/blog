@@ -1,0 +1,8 @@
+--create a controller
+symfony console make:controller NomDuController 
+php bin/console make:controller NomDuController 
+
+-- npm run dev (x)
+
+
+

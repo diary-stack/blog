@@ -1,0 +1,55 @@
+~~~~~~~Reha manao projet
+
+1 - in le projet
+
+2 - liste fonctionnaliter
+
+=> article 
+=> fulltext search
+=> categories
+=> contact 
+=> admin 
+=> one article => suggestion 
+
+3 - template
+
+color : (logo)
+- 3 couleur (noir | blanc)
+- 5 couleur max
+
+LOGO => couleur dominant (primary color)
+
+-color pallette (site:: coolors , colorhunt)
+
+4 - model (entity)
+
+=> CATEGORIES
+- name
+=> ARTICLE
+- title 
+-slugg
+- image
+- content
+- createdAt
+- updateAt
+- category_id (clé etranger)
+=> CONTACT  
+- fullname
+- object
+- mail
+- message
+
+5 - Code
+
+~~~~~~~~~~~~~~~~~~~
+
+    composer create-project symfony/skeleton:"6.3.*" todo_api
+    cd todo_api
+    composer requir api
+
+~~~~~~~~~~~~~~~~~~~
+
+PWA
+
+
+

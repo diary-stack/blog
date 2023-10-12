@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html>
+
+	<head>
+		<meta charset="UTF-8">
+		<title>
+			{% block title %}Reviews Empire!
+			{% endblock %}
+		</title>
+		<link rel="icon" href="data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 128 128%22><text y=%221.2em%22 font-size=%2296%22>⚫️</text></svg>">
+		{% block stylesheets %}
+			{{ encore_entry_link_tags('app') }}
+		{% endblock %}
+
+		{% block javascripts %}
+			{{ encore_entry_script_tags('app') }}
+		{% endblock %}
+	</head>
+
+	<body>
+		<div class="container-fluid">
+			<div class="row">
+				<div class="col-lg-2 bg-dark text-light">
+					<div class="position-sticky w-100 vh-100 top-0">
+						<ul>
+							<li>
+								<h2>Admin</h2>
+							</li>
+							<li class="mb-2">
+								<button class="btn btn-light">
+									<a href="{{ path("app_articles_index") }}">Home Admin</a>
+								</button>
+							</li>
+							<li class="mb-2">
+								<button class="btn btn-light">
+									<a href="{{ path("app_articles_new") }}">Create Article</a>
+								</button>
+							</li>
+							<li class="mb-2">
+								<button class="btn btn-light">
+									<a href="{{ path("app_contact_index") }}">View All Mail</a>
+								</button>
+							</li>
+							<li class="mb-2">
+								<button class="btn btn-danger">
+									<a href="{{ path("app_home") }}">Return Home</a>
+								</button>
+							</li>
+						</ul>
+					</div>
+				</div>
+				<div class="col-lg-10"> {% block body %}{% endblock %}
+					</div>
+				</div>
+			</div>
+		</body>
+
+	</html>
